@@ -11,7 +11,6 @@ stages:
   - test
   - moban
   - name: unsupported
-    if: branch = master AND type = push
 
 .disable_global: &disable_global
   before_install: false
@@ -50,7 +49,7 @@ jobs:
       <<: *disable_global
       stage: unsupported
       script: .misc/check_unsupported.sh
-    - python: 3.4.3
+    - python: 3.4.1
       <<: *disable_global
       stage: unsupported
       script: .misc/check_unsupported.sh
